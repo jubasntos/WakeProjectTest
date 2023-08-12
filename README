@@ -1,0 +1,23 @@
+Implementação do Mini Projeto Wake - API de produtos
+
+A aplicação foi realizada na versão 6.0 .Net e contém o projeto principal: Products.API e um Projeto de Testes: Products.Test
+
+Foi utilizado uma instância do sql server em um contanier docker para a realizar a persistencia dos dados no banco de dados.
+
+O padrão de arquitetura de software utilizado foi com base em "Repository Pattern", a API tem os seus endpoints na controller, tem sua model com os atributos dos produtos, repositórios com suas
+separações lógicas de acesso aos dados (armazenamento e recuperação) da lógica de negócios de uma aplicação e interfaces para realizar a movimentação, comunicação e trafêgo de dados com banco de dados e testes.
+
+Foi realizado uma migration para a criação da base de dados no banco SQL.
+
+Teste:
+
+Este teste verifica se um produto é adicionado corretamente ao banco de dados quando o método Create é chamado.
+
+Cria um contexto de banco de dados em memória com o nome "TestDatabase".
+Instancia um repositório ProductsRepository usando esse contexto.
+Obtém a contagem inicial de produtos no banco de dados.
+Cria um novo produto fictício.
+Chama o método CreateProduct para adicionar esse produto ao banco de dados.
+Obtém a contagem atualizada de produtos no banco de dados.
+Obtém o produto recém-adicionado do banco de dados.
+Realiza algumas asserções para verificar se o produto foi adicionado corretamente: a contagem de produtos aumentou, o produto não é nulo e o nome do produto corresponde ao nome definido anteriormente.
